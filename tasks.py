@@ -13,7 +13,7 @@ def test(c):
 @task
 def commit(c):
 	message = input("Enter a git commit message: ")
-	c.run("git add . && git commit -am '{}'".format(message))
+	c.run("git add . && git commit -m '{}'".format(message))
 
 @task
 def push(c):
@@ -21,9 +21,9 @@ def push(c):
 
 @task
 def prepare(c):
-	test()
-	commit()
-	push()
+	test(c)
+	commit(c)
+	push(c)
 
 
 # deploy
