@@ -28,8 +28,8 @@ def prepare(c):
 
 # deploy
 
-# def pull(c):
-# 	c.run("git pull origin master")
+def pull(c):
+	c.run("git pull origin master")
 
 @task
 def heroku(c):
@@ -41,11 +41,10 @@ def heroku_test(c):
 
 @task
 def deploy(c):
-	# pull()
-	test()
-	commit()
-	heroku()
-	heroku_test()
+	pull(c)
+	test(c)
+	heroku(c)
+	heroku_test(c)
 
 @task
 def rollback(c):
