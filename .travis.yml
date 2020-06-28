@@ -1,16 +1,16 @@
-# specify language
 language:
-  - python
-
-# specify python versions(s)
+- python
 python:
-  - "3.6"
-
-# install dependencies
+- '3.6'
 install:
-  - pip install -r requirements.txt
-
-
-# run tests
+- pip install -r requirements.txt
 script:
-  - nosetests
+- nosetests
+deploy:
+  provider: heroku
+  api_key:
+    secure: QEDYW4HnyP+ffJ6x+sezapm1EQW+68PObCnAL5GCd50apCSkJb50Yv1Z9h1SNWMcQG3Y2ZcweyVx2LO7cu6LGWfytzdH0f3kmmUoZmxK4PLQ91Q/zAfGZpiZm3KizCioaYd5wmPYuCkAb3qIyK1Jzi+BhvQOXkqe6jtQc1LzMxaOzWm7yV3be+uhDGx8ADqEp+iBwOKpQubmqpPSc/gTsLbG5Nvuwqs9PE4tCKZp1UW78aESduZ7diDqvENLb6c8xypgVztBewdJY3lNSPrnvz9FvexuesLORmjW+bQurd7snd++niGgvfJXgBxtpOqkKeDA3diAnqXUwKsrsbfgdxXjPByT4FFQdtA9RHmdKAdX57PHyUMSHcxRI8UBMGHvktWHODiJ6iPZj+l/k9o+evNK6gLLQ2bqY4v6PgK/zeXl1kZy5M1SEr/Jpil/OwmEpgqTdR2RTBQwBgCeticzSvJdw6v+hNivowQ8FY8D6kaQ1h6kVIKH5DRyBxqaQ9HpFjc257eC+koAleRGhaXfnkn8quIYXQyWv3E9no7mLeGTw0CMqiAEwHSidMoYzkP1TjptNsEwX1SGo5CQIpPTsBxvGEWWb0BdhW4HGENXnJ9dL5xPiJtTuv5Xgttx4XlB0Vcp7Tc0Ycf/LNW2IOt32+08Wuf7N66VJV6BjoKnTEY=
+  app: lit-brushlands-28992
+  on:
+    repo: EricKostonJr/flasktaskr
+  skip_cleanup: 'true'
