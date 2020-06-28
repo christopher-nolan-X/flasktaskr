@@ -5,7 +5,6 @@ language:
 # specify python versions(s)
 python:
   - "3.6"
-  - "2.7"
 
 # install dependencies
 install:
