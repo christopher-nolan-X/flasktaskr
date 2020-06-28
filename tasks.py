@@ -18,8 +18,8 @@ def commit(c):
 @task
 def push(c):
 	c.run("git branch")
-	branch = input("Which branch do you want to push to?")
-	c.run("push origin {}".format(branch))
+	branch = input("Which branch do you want to push to? ")
+	c.run("git push origin {}".format(branch))
 
 @task
 def prepare(c):
